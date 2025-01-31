@@ -1,30 +1,33 @@
 // eslint-disable-next-line import/extensions
 import Brick from './Brick.js';
+// eslint-disable-next-line import/extensions
+import Paddle from './Paddle.js';
+// eslint-disable-next-line import/extensions
+import Ball from './Ball.js';
+import {
+  canvas,
+  ctx,
+  ballRadius,
+  brickRowCount,
+  brickColumnCount,
+  brickWidth,
+  brickHeight,
+  brickPadding,
+  brickOffsetLeft,
+  brickOffsetTop,
+  paddleWidth,
+// eslint-disable-next-line import/extensions
+} from './Constants.js';
 
 /* eslint-disable no-alert */
 /* eslint-disable no-undef */
-const canvas = document.getElementById('myCanvas');
-const ctx = canvas.getContext('2d');
-const ballRadius = 10;
 let x = canvas.width / 2;
 let y = canvas.height - 30;
 let dx = 2;
 let dy = -2;
-
-const paddleHeight = 10;
-const paddleWidth = 75;
 let paddleX = (canvas.width - paddleWidth) / 2;
 let rightPressed = false;
 let leftPressed = false;
-
-const brickRowCount = 3;
-const brickColumnCount = 5;
-const brickWidth = 75;
-const brickHeight = 20;
-const brickPadding = 10;
-const brickOffsetTop = 30;
-const brickOffsetLeft = 30;
-
 let score = 0;
 let lives = 3;
 
@@ -107,19 +110,16 @@ function drawLives() {
 }
 
 function drawBall() {
-  ctx.beginPath();
-  ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-  ctx.fillStyle = '#0095DD';
-  ctx.fill();
-  ctx.closePath();
+  Ball.render(ctx);
 }
 
 function drawPaddle() {
-  ctx.beginPath();
-  ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = '#0095DD';
-  ctx.fill();
-  ctx.closePath();
+//   ctx.beginPath();
+//   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+//   ctx.fillStyle = '#0095DD';
+//   ctx.fill();
+//   ctx.closePath();
+  Paddle.render(ctx);
 }
 
 function drawBricks() {
