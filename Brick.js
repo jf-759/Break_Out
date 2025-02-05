@@ -2,7 +2,7 @@
 import Sprite from './Sprite.js';
 
 class Brick extends Sprite {
-  constructor(x, y, width, height, color = '#0095DD') {
+  constructor(x, y, width, height, color = '#87ae73') {
     super(x, y, width, height, color); // Calls constructor of Sprite
     this.status = 1;
   }

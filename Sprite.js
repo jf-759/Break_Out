@@ -1,4 +1,5 @@
-import { brickHeight, brickWidth } from './Constants';
+// eslint-disable-next-line import/extensions
+import { brickHeight, brickWidth } from './Constants.js';
 
 class Sprite {
   constructor(x, y, width = brickWidth, height = brickHeight, color = '#0095DD') {
