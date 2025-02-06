@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/extensions
 import { brickHeight, brickWidth } from './Constants.js';
 
 class Sprite {
