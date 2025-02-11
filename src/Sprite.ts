@@ -1,7 +1,14 @@
-import { brickHeight, brickWidth } from './Constants.js';
+import { brickHeight, brickWidth } from './Constants';
 
 class Sprite {
-  constructor(x, y, width = brickWidth, height = brickHeight, color = '#0095DD') {
+  x: number
+  y: number
+  width: number
+  height: number
+  color: string
+  status: number
+
+  constructor(x: number, y: number, width: number = brickWidth, height: number = brickHeight, color: string = '#0095DD') {
     this.x = x;
     this.y = y;
     this.status = 1;
@@ -10,7 +17,7 @@ class Sprite {
     this.color = color;
   }
 
-  render(ctx) {
+  render(ctx: CanvasRenderingContext2D) {
     ctx.beginPath();
     ctx.rect(this.x, this.y, this.width, this.height);
     ctx.fillStyle = this.color;

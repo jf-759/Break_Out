@@ -1,12 +1,12 @@
-import Sprite from './Sprite.js';
+import Sprite from './Sprite';
 
 class Brick extends Sprite {
-  constructor(x, y, width, height, color = '#87ae73') {
+  constructor(x: number, y: number, width: number , height: number, color: string = '#87ae73') {
     super(x, y, width, height, color); // Calls constructor of Sprite
     this.status = 1;
   }
 
-  render(ctx) {
+  render(ctx: CanvasRenderingContext2D) {
     if (this.status === 1) {
       super.render(ctx);
     }
